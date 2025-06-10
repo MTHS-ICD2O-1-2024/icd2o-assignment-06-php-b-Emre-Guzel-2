@@ -36,7 +36,7 @@
         <main class="mdl-layout__content">
           <button id="click" name="submit"
             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-            Check the Weather
+            Check out the latest news
           </button>
           <br><br>
           <img class="Calculate" src="" name="weatherImage">
@@ -49,11 +49,11 @@
 
               // Decode the result and show the first news article
               if ($result != null) {
-                $data = json_decode($result, true); 
+                $data = json_decode($result, true);
                 // seting the title and descriptoin of the news article 
                 if (isset($data['results'][0])) {
                   $title = $data['results'][0]['title'];
-                  $description = $data['results'][0]['description']."<br>";
+                  $description = $data['results'][0]['description'] . "<br>";
 
                   // Show the result
                   echo "<h2>" . $title . "</h2>";
