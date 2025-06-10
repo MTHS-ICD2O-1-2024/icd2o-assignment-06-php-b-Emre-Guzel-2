@@ -1,4 +1,57 @@
-/* Created by: Mr. Coxall
-* Created on: Sep 2020
+/* Created by: Emre Guzel
+* Created on: May 21 2025
 * This file contains the CSS for index.html
 */
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  background: skyblue;
+}
+
+.container {
+  margin-left: 10em;
+  display: flex;
+}
+
+.Calculate {
+  width: 20%;
+  text-align: center;
+  margin-top: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cliked {
+  margin-left: 4rem;
+}
+
+.cokie-button {
+  background: none;
+  border: none;
+}
+
+#result {
+  margin: 2rem;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+}
+
+.wather-title {
+  font-size: 1.7rem;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+#result {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-right: 2rem;
+}
