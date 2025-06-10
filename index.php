@@ -30,8 +30,6 @@
           <span class="mdl-layout-title">Weather app</span>
         </div>
       </header>
-
-      <h3 class="wather-title">Curently weather in Ottawa is... </h3>
       <br>
       <!-- Form added with submit button -->
       <form action="index.php" method="GET">
@@ -45,23 +43,25 @@
           <?php
           if (isset($_GET['submit'])) {
             try {
+              // Setting API and variables 
               $url = 'https://newsdata.io/api/1/latest?apikey=pub_c0774b64c35e44e8a862750fbeda4ea8&q=technology';
+              $result = file_get_contents($url);
 
-              // Get and decode JSON
-              $response = file_get_contents($url);
-              $jsonData = json_decode($response);
+              // Decode the result and show the first news article
+              if ($result != null) {
+                $data = json_decode($result, true); 
+                // seting the title and descriptoin of the news article 
+                if (isset($data['results'][0])) {
+                  $title = $data['results'][0]['title'];
+                  $description = $data['results'][0]['description']."<br>";
 
-              // Extract temp and icon
-              $temp = $jsonData->main->temp;
-              $iconCode = $jsonData->weather[0]->icon;
-              $iconUrl = 'https://openweathermap.org/img/wn/' . $iconCode . '@2x.png';
-
-              // Set image URL (optional, but you were assigning it to $_GET, which is not needed)
-              $weatherImage = $iconUrl;
-
-              // Print temperature in Celsius
-              echo '<img class="Calculate" src="' . $iconUrl . '" alt="weather icon">';
-              echo "<b>" . "&nbsp" . "&nbsp" . "&nbsp" . round($temp - 273.15) . "°C" . "</b>";
+                  // Show the result
+                  echo "<h2>" . $title . "</h2>";
+                  echo "<p>" . $description . "</p>";
+                }
+              } else {
+                echo "<p>API error.</p>";
+              }
             } catch (Exception $error) {
               error_log("Error: " . $error->getMessage());
             }
