@@ -55,3 +55,15 @@ body {
   margin-top: 0;
   margin-right: 2rem;
 }
+.custom-title {
+  color: black;
+  font-size: 3rem;
+  font-weight: 900;
+  width: 70%;
+}
+
+.custom-description {
+  font-size: 2rem;
+  line-height: 2rem;
+  width: 50%;
+}

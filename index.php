@@ -56,8 +56,8 @@
                   $description = $data['results'][0]['description'] . "<br>";
 
                   // Show the result
-                  echo "<h2>" . $title . "</h2>";
-                  echo "<p>" . $description . "</p>";
+                  echo "<h2 class='custom-title'>" . $title . "</h2>";
+                  echo "<p class='custom-description'>" . $description . "</p>";
                 }
               } else {
                 echo "<p>API error.</p>";
