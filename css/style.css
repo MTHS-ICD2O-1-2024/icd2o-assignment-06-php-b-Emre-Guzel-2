@@ -1,5 +1,5 @@
 /* Created by: Emre Guzel
-* Created on: May 21 2025
+* Created on: June 10 2025
 * This file contains the CSS for index.html
 */
 
@@ -66,4 +66,9 @@ body {
   font-size: 2rem;
   line-height: 2rem;
   width: 50%;
+}
+.tech-news {
+  width: 25%;
+  margin-left: 60%;
+  margin-top: -20%;
 }
